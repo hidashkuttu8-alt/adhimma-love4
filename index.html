@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhimma ❤️</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:white;
+overflow-x:hidden;
+background:url('Hidashadhimma.jpg') no-repeat center center fixed;
+background-size:cover;
+}
+
+/* Dark overlay for readability */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
+}
+
+/* Title */
+h1{
+margin-top:60px;
+font-size:26px;
+padding:0 15px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #ff4d6d;}
+to{text-shadow:0 0 25px #ff00ff;}
+}
+
+/* Buttons */
+button{
+padding:12px 25px;
+margin:15px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+box-shadow:0 0 15px #ff4d6d;
+}
+
+#yes:hover{
+transform:scale(1.1);
+}
+
+#no{
+background:gray;
+color:white;
+position:absolute;
+}
+
+/* Love Message */
+#message{
+display:none;
+padding:20px;
+max-height:75vh;
+overflow-y:auto;
+font-size:15px;
+text-align:left;
+animation:fadeIn 1s ease;
+-webkit-overflow-scrolling:touch;
+scroll-behavior:smooth;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* Graffiti */
+.graffiti{
+font-size:30px;
+color:#ff00ff;
+font-weight:bold;
+text-align:center;
+text-shadow:0 0 15px #ff00ff;
+margin-top:20px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+/* Floating hearts */
+.heart{
+position:fixed;
+bottom:-10px;
+color:#ff4d6d;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-100vh);opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>ADHIMMMAAA, WILL YOU BE MY VALENTINE? ❤️</h1>
+
+<button id="yes">YES 💖</button>
+<button id="no">NO 😏</button>
+
+<div id="message">
+
+<h2 style="text-align:center;">I KNEW YOU LOVE ME ❤️</h2>
+
+<p>
+Happy Valentine’s Day, my love. Sometimes I sit alone and think about how lucky I am to have you in my life. Even though you’re a little older than me, I’ve always admired the way you handle things with so much maturity and strength. You’ve taught me so much about love, about maturity. You were always there for me when I was at my lowest point. You taught me patience and understanding.
+<br><br>
+Long distance is hard, I won’t lie. There are days I miss you so badly that even small things remind me of you — your hug, your kiss, your touch, your voice, your smile, the way you look at me.
+<br><br>
+The moments we spent together weren’t just physical for me. Holding you, talking for hours, laughing, sharing silence — those memories mean more to me than you realize. I respect you deeply — as a woman, as my partner, as someone who trusts me with her heart.
+<br><br>
+I ALWAYS LOVED YOU EVEN MORE THAN MY FAMILY. WHATEVER HAPPENS, YOU ARE MY SWEETEST BESTEST GIRLFRIEND. INIYUM DON’T LEAVE ME.
+<br><br>
+You’re not just my girlfriend — you’re someone I see in my future. Distance tests us, but it proves how real this is. No matter how far we are, ENTE SNEHAM EPPOZHM NINAK MATHRAM.
+<br><br>
+Happy Valentine’s Day, my love ❤️
+</p>
+
+<div class="graffiti">ADHIMMA FOREVER 💘</div>
+
+<br>
+
+<!-- Dancing GIF -->
+<div style="text-align:center;">
+<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="150">
+</div>
+
+</div>
+
+<!-- Your Voice -->
+<audio id="voice" src="Iloveyouadhimma.mp3"></audio>
+
+<script>
+
+/* YES CLICK */
+document.getElementById("yes").onclick=function(){
+document.getElementById("message").style.display="block";
+document.getElementById("voice").play();
+window.scrollTo(0,document.body.scrollHeight);
+}
+
+/* NO BUTTON MOVES */
+var noBtn=document.getElementById("no");
+
+function moveNo(){
+var x=Math.random()*(window.innerWidth-100);
+var y=Math.random()*(window.innerHeight-100);
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+}
+
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("touchstart",moveNo);
+
+/* Floating Hearts Generator */
+function createHeart(){
+var heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},8000);
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
